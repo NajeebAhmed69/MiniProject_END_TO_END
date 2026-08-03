@@ -12,7 +12,6 @@ st.set_page_config(page_title="Telco Churn Predictor", page_icon="📶", layout=
 st.title("📶 Live Telco Customer Churn Dashboard")
 st.write("Adjust customer attributes on the left panel to test live churn probabilities.")
 
-# Cache model training
 @st.cache_resource
 def load_and_train_model():
     df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
@@ -48,8 +47,6 @@ def load_and_train_model():
     return pipeline
 
 model = load_and_train_model()
-
-# Sidebar User Inputs
 st.sidebar.header("Customer Information")
 
 tenure = st.sidebar.slider("Tenure (Months)", min_value=1, max_value=72, value=4)
@@ -60,7 +57,6 @@ payment_method = st.sidebar.selectbox("Payment Method", ["Electronic check", "Ma
 tech_support = st.sidebar.selectbox("Tech Support", ["No", "Yes", "No internet service"])
 paperless = st.sidebar.selectbox("Paperless Billing", ["Yes", "No"])
 
-# Default demographic values
 gender = st.sidebar.selectbox("Gender", ["Male", "Female"])
 senior = st.sidebar.selectbox("Senior Citizen", [0, 1])
 partner = st.sidebar.selectbox("Partner", ["No", "Yes"])
@@ -94,7 +90,6 @@ input_data = pd.DataFrame([{
     'IsNewCustomer': is_new
 }])
 
-# Inference
 prediction = model.predict(input_data)[0]
 probability = model.predict_proba(input_data)[0][1]
 
