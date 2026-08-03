@@ -7,9 +7,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import GradientBoostingClassifier
 
-st.set_page_config(page_title="Telco Churn Predictor", page_icon="📶", layout="centered")
+st.set_page_config(page_title="Telco Churn Predictor",  layout="centered")
 
-st.title("📶 Live Telco Customer Churn Dashboard")
+st.title(" Live Telco Customer Churn Dashboard")
 st.write("Adjust customer attributes on the left panel to test live churn probabilities.")
 
 @st.cache_resource

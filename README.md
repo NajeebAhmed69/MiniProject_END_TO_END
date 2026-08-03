@@ -20,7 +20,6 @@ This project covers everything from dirty data cleaning, EDA, and domain-driven 
 
 ```text
 ├── WA_Fn-UseC_-Telco-Customer-Churn_2.csv   # Telco Churn Dataset
-├── train_and_predict.py                    # Complete CLI pipeline (Train, Evaluate, Predict)
 ├── app.py                                  # Streamlit Live Web Application
 ├── requirements.txt                        # Python dependencies
 └── README.md                               # Project documentation
